@@ -44,9 +44,6 @@ public class products extends AppCompatActivity{
 
 
 
-
-
-
         //creating search methods and so on:-
         mic=findViewById(R.id.micSearch_actionBar_btn);
 
@@ -148,8 +145,6 @@ public class products extends AppCompatActivity{
         }
 
 
-
-
         search_action_btn.setOnClickListener((e)->{
             String search_txt=search_action_txt.getText().toString();
             // creating a intent
@@ -191,6 +186,7 @@ public class products extends AppCompatActivity{
         });
 
         cart.setOnClickListener((e)->{
+            startActivity(new Intent(getApplicationContext(),cartPage.class));
         });
 
         menu.setOnClickListener((e)->{

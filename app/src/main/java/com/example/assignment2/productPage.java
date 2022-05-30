@@ -172,6 +172,7 @@ public class productPage extends AppCompatActivity {
         });
 
         cart.setOnClickListener((e)->{
+            startActivity(new Intent(getApplicationContext(),cartPage.class));
         });
 
         menu.setOnClickListener((e)->{
