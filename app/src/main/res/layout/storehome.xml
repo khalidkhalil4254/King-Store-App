@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+    <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="74dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="0dp">
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:srcCompat="@drawable/games"
+                    android:id="@+id/ps5Games_cate_btn"
+                    android:layout_marginTop="52dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="-1dp"
+                    android:layout_marginEnd="1dp"/>
+            <TextView
+                    android:text="PS5"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:alpha="0.4"
+                    android:layout_width="239dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView11"
+                    android:layout_marginEnd="110dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="19dp"
+                    android:layout_alignParentTop="true"/>
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:srcCompat="@drawable/ps4"
+                    android:id="@+id/ps4Games_cate_btn"
+                    android:layout_marginTop="306dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="-1dp"/>
+            <TextView
+                    android:text="PS4"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:alpha="0.4"
+                    android:textColor="@color/black"
+                    android:layout_width="239dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView10"
+                    android:layout_marginEnd="110dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="273dp"
+                    android:layout_alignParentTop="true"/>
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:srcCompat="@drawable/nentindo"
+                    android:id="@+id/nintendoGames_cate_btn"
+                    android:layout_marginTop="552dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="-1dp"
+                    android:layout_marginBottom="100dp"/>
+            <TextView
+                    android:text="nintendo"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:layout_width="239dp"
+                    android:alpha="0.4"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView18"
+                    android:layout_marginEnd="108dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="520dp"
+                    android:layout_alignParentTop="true"/>
+
+            <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:srcCompat="@drawable/xbox"
+                    android:id="@+id/xboxGame_cate_btn"
+                    android:layout_marginTop="798dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginEnd="-1dp"
+                    android:layout_marginBottom="100dp"/>
+            <TextView
+                    android:text="Xbox"
+                    android:textSize="20dp"
+                    android:textStyle="normal"
+                    android:textColor="@color/black"
+                    android:layout_width="239dp"
+                    android:alpha="0.4"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView19"
+                    android:layout_marginEnd="108dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="767dp"
+                    android:layout_alignParentTop="true"/>
+
+
+        </RelativeLayout>
+    </ScrollView>
+    <include layout="@layout/actionbar" android:id="@+id/include"></include>
+    <include layout="@layout/navigationbar"></include>
+
+
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Home"
+          android:icon="@drawable/ic_home_fill0_wght400_grad0_opsz48__1_"
+          android:id="@+id/homePage_navbar"/>
+    <item android:title="Cart"
+          android:icon="@drawable/ic_shopping_bag_fill0_wght400_grad0_opsz48"
+          android:id="@+id/cartPage_navbar"/>
+    <item android:title="Favorites"
+          android:icon="@drawable/ic_favorite_fill0_wght400_grad0_opsz48"
+          android:id="@+id/favoritesPage_navbar"/>
+    <item android:title="Menu"
+          android:icon="@drawable/ic_reorder_fill0_wght400_grad0_opsz48"
+          android:id="@+id/menuPage_navbar"/>
+</menu>
