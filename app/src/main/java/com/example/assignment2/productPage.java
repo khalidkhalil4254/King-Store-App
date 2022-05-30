@@ -113,7 +113,7 @@ public class productPage extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Product already in cart!",Toast.LENGTH_SHORT).show();
                 }
             }catch (Exception er){
-                Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),"Product already in cart!",Toast.LENGTH_SHORT).show();
             }
         });
 
