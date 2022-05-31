@@ -1,9 +1,9 @@
 package com.example.assignment2;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.KeyEvent;
-import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 import androidx.annotation.Nullable;
@@ -11,13 +11,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class cartPage extends AppCompatActivity {
+public class checkoutPage extends AppCompatActivity {
 
 
-    Button checkout;
-    ListView listView_cart_list;
-    ListAdapter adapter;
-    ArrayList<productDataModel> productsList;
     ImageView search_action_btn,menu,home,fav,cart,nav;
     EditText search_action_txt;
     protected  static  final  int RESULT_SPEECH=1;
@@ -25,13 +21,11 @@ public class cartPage extends AppCompatActivity {
     TextView total;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.cart_page);
+        setContentView(R.layout.checkout);
 
-        //referencing the components of xml within the java:-
-        checkout= (Button) findViewById(R.id.checkout);
-        listView_cart_list=findViewById(R.id.listView_cartPage_list);
+        total=findViewById(R.id.totalPrice_cartPage_txt);
         nav=findViewById(R.id.navBar);
         home=findViewById(R.id.homePage);
         fav=findViewById(R.id.favPage);
@@ -39,70 +33,13 @@ public class cartPage extends AppCompatActivity {
         menu=findViewById(R.id.menuPage);
         search_action_txt=findViewById(R.id.search_actionbar_txt);
         search_action_btn=findViewById(R.id.search_action_btn);
-        total=findViewById(R.id.totalPrice_cartPage_txt);
-
-
-        //creating search methods and so on:-
-        mic=findViewById(R.id.micSearch_actionBar_btn);
-
-
-        mic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-                intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE,"en-US");
-                try {
-                    startActivityForResult(intent,RESULT_SPEECH);
-                    search_action_txt.setText("");
-                }catch (Exception er){
-                    Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_LONG).show();
-                }
-
-            }
-        });
-
-
-
-        checkout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),checkoutPage.class));
-                Toast.makeText(getApplicationContext(),"checjout",Toast.LENGTH_SHORT).show();
-                try {
-                    controller con=new controller(getApplicationContext());
-                    String user=con.getActiveUser();
-                    Toast.makeText(getApplicationContext(),"this is : "+String.valueOf(con.getFinalTotal(user)),Toast.LENGTH_LONG).show();
-                }catch (Exception er){
-                    Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_LONG).show();
-                }
-            }
-        });
-
-
-
-        //creating the logic of the all application:-
-        try {
-            //creating the components of list within:-
-            controller control=new controller(getApplicationContext());
-            productsList=control.getAllInCartProducts();
-            adapter= new cartViewAdapter(getApplicationContext(),productsList);
-            listView_cart_list.setAdapter(adapter);
-
-
-        }catch (Exception er){
-            Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_LONG).show();
-        }
-
-
-
-        //creating event handlers for all list items:-
 
 
 
 
 
-
+        controller con=new controller(getApplicationContext());
+        total.setText("Your Total order Price : "+String.valueOf(con.getFinalTotal(con.getActiveUser()))+" EGP");
 
 
 
@@ -116,6 +53,7 @@ public class cartPage extends AppCompatActivity {
         fav.setOnClickListener((e)->{
         });
         cart.setOnClickListener((e)->{
+            startActivity(new Intent(getApplicationContext(),cartPage.class));
         });
         menu.setOnClickListener((e)->{
             startActivity(new Intent(getApplicationContext(), com.example.assignment2.menu.class));
@@ -172,7 +110,4 @@ public class cartPage extends AppCompatActivity {
                 break;
         }
     }
-
-
-
 }

@@ -19,16 +19,16 @@
                 android:textColorHint="@color/gray"
                 android:textColor="@color/black"
                 android:background="@drawable/searchbar"
-                android:layout_width="260dp"
-                android:layout_height="wrap_content"
+                android:layout_width="259dp"
+                android:layout_height="35dp"
                 android:inputType="textFilter"
                 android:ems="10"
                 android:id="@+id/search_actionbar_txt"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
                 android:hint="Search K-store"
-                android:layout_marginTop="26dp"
-                android:layout_marginEnd="31dp"/>
+                android:layout_marginTop="17dp"
+                android:layout_marginEnd="32dp"/>
         <ImageView
                 android:padding="5dp"
                 android:layout_alignParentEnd="true"
@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_search_fill0_wght400_grad0_opsz48__1_" android:layout_marginEnd="252dp"
-                android:layout_marginTop="26dp"/>
+                android:layout_marginTop="19dp"/>
         <ImageView
                 android:layout_width="63dp"
                 android:layout_height="51dp"
@@ -45,17 +45,17 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true" android:layout_marginTop="14dp" android:layout_marginStart="11dp"/>
         <ImageButton
-                android:layout_width="61dp"
-                android:layout_height="28dp"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
                 android:background="@drawable/ic_keyboard_voice_fill0_wght400_grad0_opsz48"
                 android:id="@+id/micSearch_actionBar_btn"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="39dp"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="19dp"
+                android:layout_marginBottom="29dp"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="311dp"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="25dp"
                 android:layout_alignParentTop="true"/>
     </RelativeLayout>
 </RelativeLayout>

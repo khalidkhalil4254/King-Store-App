@@ -1,5 +1,6 @@
 package com.example.assignment2;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +50,6 @@ public class cartViewAdapter extends ListAdapter {
         ImageView img=view.findViewById(R.id.productpic_cartPage);
         ImageView delete=view.findViewById(R.id.delete_cartPage_btn);
         ListView listView_cart_list=viewGroup.findViewById(R.id.listView_cartPage_list);
-        TextView totalPrice=view.findViewById(R.id.totalPrice_cartPage_txt);
 
 
         controller control=new controller(view.getContext());

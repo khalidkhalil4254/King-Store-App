@@ -24,6 +24,7 @@
         <activity android:name=".products"></activity>
         <activity android:name=".productPage"></activity>
         <activity android:name=".cartPage"></activity>
+        <activity android:name=".checkoutPage"></activity>
     </application>
 
 </manifest>
