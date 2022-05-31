@@ -415,4 +415,79 @@ public class controller extends SQLiteOpenHelper {
         return res;
     }
 
+
+    String getPasswordByEmail(String email){
+        String res="Invalid Username!";
+        SQLiteDatabase db=this.getWritableDatabase();
+        String sql="SELECT * from customer where email='"+email+"';";
+        Cursor cursor=db.rawQuery(sql,null);
+        if(cursor.moveToFirst()){
+            do{
+                String pass=cursor.getString(3);
+                res=pass;
+                break;
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return res;
+    }
+
+
+    String getEmail(){
+        String email="not found!";
+        SQLiteDatabase db=this.getWritableDatabase();
+        String user=getActiveUser();
+        String sql="SELECT email from customer where username='"+user+"';";
+
+        Cursor cursor=db.rawQuery(sql,null);
+
+        if(cursor.moveToFirst()){
+            do{
+                String mail=cursor.getString(0);
+                email=mail;
+                break;
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return email;
+    }
+
+
+    String getOrder(){
+        String res="";
+        String user=getActiveUser();
+        res+="Hello "+user+" your order : \n\n\n\n";
+        SQLiteDatabase db=this.getWritableDatabase();
+        String sql="SELECT * from cart where user='"+getActiveUser()+"'; ";
+        Cursor cursor=db.rawQuery(sql,null);
+
+        int x=1;
+
+        if(cursor.moveToFirst()){
+            do{
+                String title=cursor.getString(1);
+                res+=String.valueOf(x)+"- title : "+title+". category: ";
+                String cate=cursor.getString(2);
+                res+=cate+". Price: ";
+                String price =cursor.getString(3);
+                res+=price+" EGP. quantity: ";
+                String quantity=cursor.getString(5);
+                res+=quantity+" .\n\n";
+                x+=1;
+            }while (cursor.moveToNext());
+        }
+
+        res+="\n\n\n ---------------has been confirmed successfully!---------------";
+
+        cursor.close();
+        db.close();
+        return res;
+    }
+
+
+
+
+
 }

@@ -8,6 +8,25 @@
         android:background="@drawable/product_product_page_background">
 
 
+    <include layout="@layout/navigationbar" tools:layout_editor_absoluteY="0dp"
+             tools:layout_editor_absoluteX="0dp"></include>
+    <include layout="@layout/actionbar"
+             android:id="@+id/include" tools:layout_editor_absoluteY="0dp"
+             tools:layout_editor_absoluteX="0dp"></include>
+    <Button
+            android:onClick="buttonSendEmail"
+            android:text="Confirm"
+            android:textColor="@color/black"
+            android:background="@drawable/addtocart_btn"
+            android:layout_width="166dp"
+            android:layout_height="50dp"
+            android:id="@+id/button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintVertical_bias="0.812"/>
     <TextView
             android:gravity="center"
             android:textColor="@color/black"
@@ -22,26 +41,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintVertical_bias="0.318"/>
-    <Button
-            android:text="Confirm"
-            android:textColor="@color/black"
-            android:background="@drawable/addtocart_btn"
-            android:layout_width="166dp"
-            android:layout_height="50dp"
-            android:id="@+id/button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintVertical_bias="0.472"/>
-
-
-    <include layout="@layout/actionbar"
-             android:id="@+id/include"></include>
-    <include layout="@layout/navigationbar" tools:layout_editor_absoluteY="0dp"
-             tools:layout_editor_absoluteX="0dp"></include>
+            app:layout_constraintVertical_bias="0.677"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

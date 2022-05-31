@@ -1,9 +1,16 @@
 package com.example.assignment2;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.*;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import javax.mail.*;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
 
 public class signIn extends AppCompatActivity {
 
@@ -52,18 +59,78 @@ public class signIn extends AppCompatActivity {
 
 
 
-        forgotpassword_btn.setOnClickListener((e)->{
-            try {
-                String user=email_txt.getText().toString();
-                controller con=new controller(getApplicationContext());
-                Toast.makeText(getApplicationContext(),con.getPassword(user),Toast.LENGTH_LONG).show();
-            }catch (Exception er){
-                Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_LONG).show();
-            }
-        });
+//        forgotpassword_btn.setOnClickListener((e)->{
+//            try {
+//                String user=email_txt.getText().toString();
+//                controller con=new controller(getApplicationContext());
+//                Toast.makeText(getApplicationContext(),con.getPassword(user),Toast.LENGTH_LONG).show();
+//            }catch (Exception er){
+//                Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_LONG).show();
+//            }
+//        });
 
 
     }
+
+
+
+
+
+    public void SendEmail(View view){
+
+        try {
+            String mailAddress=email_txt.getText().toString();
+            controller con=new controller(getApplicationContext());
+            Toast.makeText(getApplicationContext(),mailAddress,Toast.LENGTH_LONG).show();
+            String stringSenderEmail = "kalidkalil4254@gmail.com";
+            String stringReceiverEmail = mailAddress;
+            String stringPasswordSenderEmail = "Kk01158194254@";
+
+            String stringHost = "smtp.gmail.com";
+
+            Properties properties = System.getProperties();
+
+            properties.put("mail.smtp.host", stringHost);
+            properties.put("mail.smtp.port", "465");
+            properties.put("mail.smtp.ssl.enable", "true");
+            properties.put("mail.smtp.auth", "true");
+
+            javax.mail.Session session = Session.getInstance(properties, new Authenticator() {
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(stringSenderEmail, stringPasswordSenderEmail);
+                }
+            });
+
+            MimeMessage mimeMessage = new MimeMessage(session);
+            mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(stringReceiverEmail));
+
+            mimeMessage.setSubject("Password Recovery!");
+            String msg=con.getOrder();
+            Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
+            mimeMessage.setText("Your Forgot password is : "+con.getPasswordByEmail(mailAddress)+"!");
+
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Transport.send(mimeMessage);
+                    } catch (MessagingException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            thread.start();
+
+        } catch (AddressException e) {
+            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+        } catch (MessagingException e) {
+            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
 
 
 

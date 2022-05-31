@@ -122,6 +122,7 @@
             app:layout_constraintHorizontal_bias="0.306"
             app:layout_constraintVertical_bias="0.769"/>
     <TextView
+            android:onClick="SendEmail"
             android:alpha="0.5"
             android:text="Forgot Password?"
             android:textColor="@color/white"

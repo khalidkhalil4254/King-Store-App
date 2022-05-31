@@ -27,6 +27,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    packagingOptions{
+        exclude 'META-INF/NOTICE.md'
+        exclude 'META-INF/LICENSE.md'
+    }
 }
 
 dependencies {
@@ -38,8 +42,11 @@ dependencies {
     api 'androidx.recyclerview:recyclerview:1.2.1'
     implementation 'com.github.fengdai.viewholder:viewholder-factory:0.4.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.sun.mail:android-mail:1.6.6'
+    implementation 'com.sun.mail:android-activation:1.6.7'
 }
 

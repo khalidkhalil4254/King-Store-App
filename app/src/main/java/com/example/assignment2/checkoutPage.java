@@ -1,15 +1,27 @@
 package com.example.assignment2;
 
-import android.content.Intent;
+import android.content.*;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.view.KeyEvent;
+import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Properties;
+
+import javax.mail.Authenticator;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 public class checkoutPage extends AppCompatActivity {
 
@@ -92,6 +104,63 @@ public class checkoutPage extends AppCompatActivity {
 
 
 
+    }
+
+
+
+
+
+    public void buttonSendEmail(View view){
+
+        try {
+            controller con=new controller(getApplicationContext());
+            String receiver=con.getEmail();
+            Toast.makeText(getApplicationContext(),receiver,Toast.LENGTH_LONG).show();
+            String stringSenderEmail = "kalidkalil4254@gmail.com";
+            String stringReceiverEmail = receiver;
+            String stringPasswordSenderEmail = "Kk01158194254@";
+
+            String stringHost = "smtp.gmail.com";
+
+            Properties properties = System.getProperties();
+
+            properties.put("mail.smtp.host", stringHost);
+            properties.put("mail.smtp.port", "465");
+            properties.put("mail.smtp.ssl.enable", "true");
+            properties.put("mail.smtp.auth", "true");
+
+            javax.mail.Session session = Session.getInstance(properties, new Authenticator() {
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(stringSenderEmail, stringPasswordSenderEmail);
+                }
+            });
+
+            MimeMessage mimeMessage = new MimeMessage(session);
+            mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(stringReceiverEmail));
+
+            mimeMessage.setSubject("Order Confirmed Successfully!");
+            String msg=con.getOrder();
+            Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
+            mimeMessage.setText(msg);
+
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Transport.send(mimeMessage);
+                    } catch (MessagingException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            thread.start();
+
+        } catch (AddressException e) {
+            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+        } catch (MessagingException e) {
+            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+        }
     }
 
 
