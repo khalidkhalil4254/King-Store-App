@@ -380,13 +380,13 @@ public class controller extends SQLiteOpenHelper {
     int getFinalTotal(String user){
         int res=-1;
         SQLiteDatabase db=this.getWritableDatabase();
-        String sql="select sum(total) from cart WHERE user='"+user+"';";
+        String sql="SELECT sum(price*quantity) from cart where user='"+user+"';";
 
         Cursor cursor=db.rawQuery(sql,null);
 
         if(cursor.moveToFirst()){
             do{
-                int total=cursor.getInt(6);
+                int total=cursor.getInt(0);
                 res=total;
                 break;
             }while (cursor.moveToNext());

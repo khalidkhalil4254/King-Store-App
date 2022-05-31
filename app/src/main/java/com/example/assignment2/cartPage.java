@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class cartPage extends AppCompatActivity {
 
 
+    Button checkout;
     ListView listView_cart_list;
     ListAdapter adapter;
     ArrayList<productDataModel> productsList;
@@ -29,6 +30,7 @@ public class cartPage extends AppCompatActivity {
         setContentView(R.layout.cart_page);
 
         //referencing the components of xml within the java:-
+        checkout= (Button) findViewById(R.id.checkout);
         listView_cart_list=findViewById(R.id.listView_cartPage_list);
         nav=findViewById(R.id.navBar);
         home=findViewById(R.id.homePage);
@@ -63,6 +65,20 @@ public class cartPage extends AppCompatActivity {
         });
 
 
+
+        checkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"checjout",Toast.LENGTH_SHORT).show();
+                try {
+                    controller con=new controller(getApplicationContext());
+                    String user=con.getActiveUser();
+                    Toast.makeText(getApplicationContext(),"this is : "+String.valueOf(con.getFinalTotal(user)),Toast.LENGTH_LONG).show();
+                }catch (Exception er){
+                    Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_LONG).show();
+                }
+            }
+        });
 
 
 

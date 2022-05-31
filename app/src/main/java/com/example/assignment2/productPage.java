@@ -26,7 +26,7 @@ public class productPage extends AppCompatActivity {
     Button addToCart,addToFav;
     protected  static  final  int RESULT_SPEECH=1;
     ImageView mic;
-
+    String price;
 
 
     @Override
@@ -82,11 +82,13 @@ public class productPage extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         byte[] imgByteArr= bundle.getByteArray("img");
         String title= bundle.getString("title");
-        String price= bundle.getString("price");
+        price= bundle.getString("price");
+        Toast.makeText(getApplicationContext(),price,Toast.LENGTH_LONG).show();
         String description=bundle.getString("description");
         int rate= bundle.getInt("rate");
         String cate= bundle.getString("cate");
         Bitmap imgBitmap=getImage(imgByteArr);
+
 
         //setting and initializing the values:-
         productImg.setImageBitmap(imgBitmap);
@@ -104,8 +106,7 @@ public class productPage extends AppCompatActivity {
         addToCart.setOnClickListener((e)->{
             try {
                 controller control=new controller(getApplicationContext());
-                productDataModel product=new productDataModel(productCate.getText().toString(),productTitle.getText().toString(),productPrice.getText().
-                        toString(),"","",imgBitmap,-1);
+                productDataModel product=new productDataModel(productCate.getText().toString(),productTitle.getText().toString(),String.valueOf(control.getProductPrice(title,cate)),"","",imgBitmap,-1);
                 if(!control.isContain(product,"cart")){
                     control.addProductToCart(product);
                     Toast.makeText(getApplicationContext(),"Product added for user:"+control.getActiveUser(),Toast.LENGTH_SHORT).show();
@@ -128,9 +129,7 @@ public class productPage extends AppCompatActivity {
         });
 
 
-
         //adding event handlers to the action bar and the bottom navbar:-
-
         search_action_btn.setOnClickListener((e)->{
             String search_txt=search_action_txt.getText().toString();
             // creating a intent
@@ -186,8 +185,6 @@ public class productPage extends AppCompatActivity {
         bt= BitmapFactory.decodeByteArray(imag,0, imag.length);
         return bt;
     }
-
-
 
 
 

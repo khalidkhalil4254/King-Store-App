@@ -94,7 +94,7 @@ public class products extends AppCompatActivity{
                             Intent intent = new Intent(getApplicationContext(), productPage.class);
                             Bundle bundle = new Bundle();
                             bundle.putString("title",productsList.get(i).getTitle());
-                            bundle.putString("price","Price : "+productsList.get(i).getPrice()+" EGP");
+                            bundle.putString("price",productsList.get(i).getPrice());
                             bundle.putString("description",productsList.get(i).getDescription());
                             bundle.putInt("rate",productsList.get(i).getRate());
                             bundle.putString("cate",productsList.get(i).getCate());
