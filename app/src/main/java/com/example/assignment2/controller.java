@@ -479,7 +479,7 @@ public class controller extends SQLiteOpenHelper {
             }while (cursor.moveToNext());
         }
 
-        res+="\n\n\n ---------------has been confirmed successfully!---------------";
+        res+="\n\n\n -------------------has been confirmed successfully!-------------------";
 
         cursor.close();
         db.close();
