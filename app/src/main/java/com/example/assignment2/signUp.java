@@ -67,7 +67,7 @@ public class signUp extends AppCompatActivity {
                     password_txt.setText("");
                     finish();
                 }catch (Exception er){
-                    Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"Username is already existed!",Toast.LENGTH_LONG).show();
                 }
             }
         });

@@ -35,7 +35,7 @@ public class signIn extends AppCompatActivity {
                     if(b){
                         startActivity(new Intent(getApplicationContext(),storeHome.class));
                     }else {
-                        Toast.makeText(getApplicationContext(),"Invalid Account:"+b,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Invalid Account!",Toast.LENGTH_SHORT).show();
                     }
                 }catch (Exception er){
                     Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_LONG).show();

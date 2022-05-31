@@ -62,7 +62,7 @@ public class ListAdapter extends BaseAdapter {
         //setting the values:-
         imageView.setImageBitmap(product.getImg());
         title.setText(product.getTitle());
-        sub.setText("Price:   "+product.getPrice()+"$");
+        sub.setText(product.getPrice()+" EGP");
         rate.setRating(product.getRate());
         type.setText(productType);
 

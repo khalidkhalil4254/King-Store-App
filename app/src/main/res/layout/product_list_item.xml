@@ -54,15 +54,15 @@
                 android:text="productType"
                 android:textSize="14dp"
                 android:textStyle="bold"
-                android:alpha="0.5"
-                android:textColor="@color/darkBlue"
+                android:alpha="0.4"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/productType"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="95dp"
+                android:layout_marginBottom="84dp"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="183dp"/>
+                android:layout_marginStart="181dp"/>
         <RatingBar
                 android:id="@+id/rattingBar"
                 style="?android:attr/ratingBarStyleSmall"
