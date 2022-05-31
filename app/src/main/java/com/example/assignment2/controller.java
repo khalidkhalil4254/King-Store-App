@@ -397,5 +397,21 @@ public class controller extends SQLiteOpenHelper {
         return res;
     }
 
+    String getPassword(String username){
+        String res="Invalid Username!";
+        SQLiteDatabase db=this.getWritableDatabase();
+        String sql="SELECT * from customer where username='"+username+"';";
+        Cursor cursor=db.rawQuery(sql,null);
+        if(cursor.moveToFirst()){
+            do{
+                String pass=cursor.getString(3);
+                res=pass;
+                break;
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        return res;
+    }
 
 }

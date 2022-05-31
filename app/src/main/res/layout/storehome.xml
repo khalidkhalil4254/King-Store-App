@@ -32,7 +32,7 @@
                     android:layout_marginStart="-1dp"
                     android:layout_marginEnd="1dp"/>
             <TextView
-                    android:text="PS5"
+                    android:text="PS5 Games"
                     android:textSize="20dp"
                     android:textStyle="normal"
                     android:textColor="@color/black"
@@ -57,7 +57,7 @@
                     android:layout_marginStart="1dp"
                     android:layout_marginEnd="-1dp"/>
             <TextView
-                    android:text="PS4"
+                    android:text="PS4  Games"
                     android:textSize="20dp"
                     android:textStyle="normal"
                     android:alpha="0.4"
@@ -83,7 +83,7 @@
                     android:layout_marginEnd="-1dp"
                     android:layout_marginBottom="100dp"/>
             <TextView
-                    android:text="nintendo"
+                    android:text="Nintendo Games"
                     android:textSize="20dp"
                     android:textStyle="normal"
                     android:textColor="@color/black"
@@ -109,7 +109,7 @@
                     android:layout_marginEnd="-1dp"
                     android:layout_marginBottom="100dp"/>
             <TextView
-                    android:text="Xbox"
+                    android:text="Xbox Games"
                     android:textSize="20dp"
                     android:textStyle="normal"
                     android:textColor="@color/black"
