@@ -24,7 +24,7 @@
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginTop="1dp"
             app:layout_constraintVertical_bias="0.287" app:layout_constraintHorizontal_bias="0.333"/>
-    <include layout="@layout/actionbar"
+    <include layout="@layout/cart_action_bar"
              android:id="@+id/include"></include>
     <include layout="@layout/navigationbar"></include>
 

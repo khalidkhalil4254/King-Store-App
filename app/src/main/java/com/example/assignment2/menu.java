@@ -23,12 +23,19 @@ public class menu extends AppCompatActivity {
     LinearLayoutManager linearLayoutManager;
     List<menuItemModel> listAdapter;
     RecyclerView.Adapter adapter;
-    ImageView homePage;
+    ImageView homePage,fav,cart,nav;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
+
+
+        nav=findViewById(R.id.navBar);
+        fav=findViewById(R.id.favPage);
+        cart=findViewById(R.id.cartPage);
+
 
         homePage=findViewById(R.id.homePage);
 
@@ -36,8 +43,16 @@ public class menu extends AppCompatActivity {
         InitRecyclerView();
         recyclerView.addOnItemTouchListener(new RecyclerView.SimpleOnItemTouchListener());
 
+
+        nav.setOnClickListener((e)->{
+        });
         homePage.setOnClickListener((e)->{
             startActivity(new Intent(getApplicationContext(),storeHome.class));
+        });
+        fav.setOnClickListener((e)->{
+        });
+        cart.setOnClickListener((e)->{
+            startActivity(new Intent(getApplicationContext(),cartPage.class));
         });
 
 

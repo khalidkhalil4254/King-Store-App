@@ -47,7 +47,7 @@ public class checkoutPage extends AppCompatActivity implements OnMapReadyCallbac
     Button btn;
     private final static int PLACE_PICKER_REQUEST = 999;
     private final static int LOCATION_REQUEST_CODE = 23;
-
+    ImageButton back_btn;
     ImageView menu,home,fav,cart,nav;
     protected  static  final  int RESULT_SPEECH=1;
     ImageView mic;
@@ -72,7 +72,7 @@ public class checkoutPage extends AppCompatActivity implements OnMapReadyCallbac
 
 
 
-
+        back_btn=findViewById(R.id.back_order_actionbar);
         total=findViewById(R.id.totalPrice_cartPage_txt);
         nav=findViewById(R.id.navBar);
         home=findViewById(R.id.homePage);
@@ -89,6 +89,10 @@ public class checkoutPage extends AppCompatActivity implements OnMapReadyCallbac
         total.setText("Your Total order Price : "+String.valueOf(con.getFinalTotal(con.getActiveUser()))+" EGP");
 
 
+
+        back_btn.setOnClickListener((e)->{
+            startActivity(new Intent(getApplicationContext(),cartPage.class));
+        });
 
         //creating event handlers for bottom navbar:-
         nav.setOnClickListener((e)->{

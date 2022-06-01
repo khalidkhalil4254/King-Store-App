@@ -6,7 +6,7 @@
         android:layout_height="match_parent" android:background="@drawable/backgrn2">
 
 
-    <include layout="@layout/sidepagesnavbar"></include>
+    <include layout="@layout/menu_action_bar"></include>
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/menuPageRecyclerView"

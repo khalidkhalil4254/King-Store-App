@@ -27,14 +27,14 @@
 
     <include layout="@layout/navigationbar" tools:layout_editor_absoluteY="0dp"
              tools:layout_editor_absoluteX="0dp"></include>
-    <include layout="@layout/sidepagesnavbar"></include>
+    <include layout="@layout/order_confirmation_actionbar"></include>
     <Button
             android:onClick="buttonSendEmail"
-            android:text="Confirm"
+            android:text="Confirm Order"
             android:textColor="@color/black"
             android:background="@drawable/addtocart_btn"
-            android:layout_width="166dp"
-            android:layout_height="50dp"
+            android:layout_width="195dp"
+            android:layout_height="55dp"
             android:id="@+id/button"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -56,7 +56,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintVertical_bias="0.677"/>
+            app:layout_constraintVertical_bias="0.691"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,30 +6,32 @@
         xmlns:android="http://schemas.android.com/apk/res/android">
     <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="75dp"
+            android:layout_height="65dp"
             android:background="@drawable/actionbar">
 
         <TextView
+                android:alpha="0.8"
                 android:gravity="center"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:text="King store"
+                android:text="Cart"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:layout_width="142dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView8"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="122dp"/>
-        <ImageView
+                android:layout_marginEnd="203dp"/>
+        <ImageButton
+                android:clickable="true"
+                android:alpha="0.5"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentEnd="true"
-                android:layout_width="31dp"
-                android:layout_height="26dp"
-                app:srcCompat="@drawable/ic_arrow_back_ios_fill0_wght400_grad0_opsz48"
-                android:id="@+id/back_sideNaveBar_btn"
-                android:layout_marginEnd="333dp"
-                android:layout_marginTop="20dp"/>
+                android:layout_width="35dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_arrow_back_ios_fill0_wght400_grad0_opsz48"
+                android:id="@+id/back_cart_actionbar"
+                android:layout_marginEnd="327dp"
+                android:layout_marginTop="19dp"/>
     </RelativeLayout>
 </RelativeLayout>

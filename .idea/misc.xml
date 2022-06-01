@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/drawable-v24/actionbar_menu.xml" value="0.3828125" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/drawable/actionbar.xml" value="0.38177083333333334" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/drawable/addtocart_btn.xml" value="0.3828125" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/drawable/buttonwithoutcolor.xml" value="0.3828125" />
@@ -29,6 +30,7 @@
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/actionbar.xml" value="0.5" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/activity_maps.xml" value="0.2609375" />
+        <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/cart_action_bar.xml" value="0.75" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/cart_list_item.xml" value="0.75" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/cart_page.xml" value="0.33" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/checkout.xml" value="0.33" />
@@ -40,12 +42,14 @@
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/fragment_menu.xml" value="0.37604166666666666" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/getstarted.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/menu.xml" value="0.33" />
+        <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/menu_action_bar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/menulistitem.xml" value="0.7129506008010681" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/navigationbar.xml" value="0.5" />
+        <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/order_confirmation_actionbar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/product_list_item.xml" value="0.5" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/product_page.xml" value="0.22" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/products.xml" value="0.33" />
-        <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/sidepagesnavbar.xml" value="0.5" />
+        <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/sidepagesnavbar.xml" value="0.5843179377013964" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/signin.xml" value="0.67" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/signup.xml" value="2.0" />
         <entry key="..\:/Users/Kalid/IntelliJIDEAProjects/assignment2/app/src/main/res/layout/storehome.xml" value="0.33" />
