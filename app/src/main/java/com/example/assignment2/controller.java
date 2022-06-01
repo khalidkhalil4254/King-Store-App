@@ -486,8 +486,4 @@ public class controller extends SQLiteOpenHelper {
         return res;
     }
 
-
-
-
-
 }
