@@ -26,7 +26,7 @@ public class ListAdapter extends BaseAdapter {
         this.productType=t;
         inflater=LayoutInflater.from(context);
     }
-
+/////////////////////////////////////////
     public ListAdapter() {
 
     }
