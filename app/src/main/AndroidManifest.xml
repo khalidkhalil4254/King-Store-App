@@ -11,6 +11,11 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/Theme.Assignment2">
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="AIzaSyCSjMmBBzxq3Womn_X0UnQdf_Kv-TQzCJo" />
+        <meta-data android:name="com.google.android.gms.version"
+                   android:value="@integer/google_play_services_version" />
         <activity
                 android:name=".MainActivity"
                 android:exported="true">
@@ -26,7 +31,11 @@
         <activity android:name=".products"></activity>
         <activity android:name=".productPage"></activity>
         <activity android:name=".cartPage"></activity>
-        <activity android:name=".checkoutPage"></activity>
+        <activity android:name=".checkoutPage">
+            <meta-data
+                    android:name="com.google.android.geo.API_KEY"
+                    android:value="Your Api Key" />
+        </activity>
     </application>
 
 </manifest>
