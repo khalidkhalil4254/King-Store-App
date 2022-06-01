@@ -14,7 +14,7 @@
                 android:gravity="center"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
-                android:text="My Order"
+                android:text="MY ORDER"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="20dp"

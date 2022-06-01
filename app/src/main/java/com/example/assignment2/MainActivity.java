@@ -29,11 +29,20 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 if(b){
+                    finish();
                     startActivity(new Intent(getApplicationContext(),storeHome.class));
                 }else {
+                    finish();
                     startActivity(new Intent(getApplicationContext(),signIn.class));
                 }
             }
         }, 1500);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
     }
 }

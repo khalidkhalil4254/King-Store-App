@@ -1,5 +1,6 @@
 package com.example.assignment2;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +9,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.*;
 
+import java.security.acl.Group;
 import java.util.List;
 
 import static androidx.core.content.ContextCompat.createDeviceProtectedStorageContext;
@@ -69,8 +72,11 @@ public class menuAdapter extends RecyclerView.Adapter<menuAdapter.ViewHolder> {
             if(getAdapterPosition()==0){}
             if(getAdapterPosition()==1){}
             if(getAdapterPosition()==2){
+
                 control=new controller(view.getContext());
                 control.releaseActive();
+                Activity activity = (Activity) view.getContext();
+                ActivityCompat.finishAffinity(activity);
                 view.getContext().startActivity(new Intent(view.getContext(),MainActivity.class));
             }
             if(getAdapterPosition()==3){}
