@@ -173,12 +173,11 @@ public class controller extends SQLiteOpenHelper {
                 String cate=cursor.getString(2);
                 String title=cursor.getString(3);
                 String price=cursor.getString(4);
-                int p=Integer.parseInt(price)/100;
                 String game_info=cursor.getString(5);
                 String decription=cursor.getString(6);
                 byte[] img=cursor.getBlob(7);
                 int rate=cursor.getInt(8);
-                productDataModel productData=new productDataModel(cate,title,String.valueOf(p),game_info,decription,getImage(img),rate);
+                productDataModel productData=new productDataModel(cate,title,price,game_info,decription,getImage(img),rate);
                 everyOne.add(productData);
             }while(cursor.moveToNext());
         }else{}
@@ -485,5 +484,13 @@ public class controller extends SQLiteOpenHelper {
         db.close();
         return res;
     }
+
+    void clearCartItems(String user){
+        String sql="delete from cart where user='"+user+"';";
+        SQLiteDatabase db=this.getWritableDatabase();
+        db.execSQL(sql);
+        db.close();
+    }
+
 
 }

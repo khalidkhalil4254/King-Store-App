@@ -82,11 +82,7 @@ public class checkoutPage extends AppCompatActivity implements OnMapReadyCallbac
 
 
 
-
-
-
-        controller con=new controller(getApplicationContext());
-        total.setText("Your Total order Price : "+String.valueOf(con.getFinalTotal(con.getActiveUser()))+" EGP");
+        total.setText("Your Total order Price : "+new controller(getApplicationContext()).getFinalTotal(new controller(getApplicationContext()).getActiveUser())+" EGP");
 
 
 
@@ -114,6 +110,62 @@ public class checkoutPage extends AppCompatActivity implements OnMapReadyCallbac
 
 
     }
+
+
+
+    public void buttonSendEmail(View view){
+
+        try {
+            controller con=new controller(getApplicationContext());
+            String receiver=con.getEmail();
+            Toast.makeText(getApplicationContext(),receiver,Toast.LENGTH_LONG).show();
+            String stringSenderEmail = "kalidkalil4254@gmail.com";
+            String stringPasswordSenderEmail = "Kk01158194254@";
+
+            String stringHost = "smtp.gmail.com";
+
+            Properties properties = System.getProperties();
+
+            properties.put("mail.smtp.host", stringHost);
+            properties.put("mail.smtp.port", "465");
+            properties.put("mail.smtp.ssl.enable", "true");
+            properties.put("mail.smtp.auth", "true");
+
+            javax.mail.Session session = Session.getInstance(properties, new Authenticator() {
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(stringSenderEmail, stringPasswordSenderEmail);
+                }
+            });
+
+            MimeMessage mimeMessage = new MimeMessage(session);
+            mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(receiver));
+
+            mimeMessage.setSubject("Order Confirmed Successfully!");
+            String msg=con.getOrder();
+            Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
+            mimeMessage.setText(msg);
+
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        Transport.send(mimeMessage);
+                    } catch (MessagingException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            thread.start();
+            con.clearCartItems(con.getActiveUser());
+            total.setText("Your Total order Price : "+new controller(getApplicationContext()).getFinalTotal(new controller(getApplicationContext()).getActiveUser())+" EGP");
+        } catch (AddressException e) {
+            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+        } catch (MessagingException e) {
+            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
 
 
@@ -220,80 +272,10 @@ public class checkoutPage extends AppCompatActivity implements OnMapReadyCallbac
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public void buttonSendEmail(View view){
-
-        try {
-            controller con=new controller(getApplicationContext());
-            String receiver=con.getEmail();
-            Toast.makeText(getApplicationContext(),receiver,Toast.LENGTH_LONG).show();
-            String stringSenderEmail = "kalidkalil4254@gmail.com";
-            String stringReceiverEmail = receiver;
-            String stringPasswordSenderEmail = "Kk01158194254@";
-
-            String stringHost = "smtp.gmail.com";
-
-            Properties properties = System.getProperties();
-
-            properties.put("mail.smtp.host", stringHost);
-            properties.put("mail.smtp.port", "465");
-            properties.put("mail.smtp.ssl.enable", "true");
-            properties.put("mail.smtp.auth", "true");
-
-            javax.mail.Session session = Session.getInstance(properties, new Authenticator() {
-                @Override
-                protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(stringSenderEmail, stringPasswordSenderEmail);
-                }
-            });
-
-            MimeMessage mimeMessage = new MimeMessage(session);
-            mimeMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(stringReceiverEmail));
-
-            mimeMessage.setSubject("Order Confirmed Successfully!");
-            String msg=con.getOrder();
-            Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_SHORT).show();
-            mimeMessage.setText(msg);
-
-            Thread thread = new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    try {
-                        Transport.send(mimeMessage);
-                    } catch (MessagingException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
-            thread.start();
-
-        } catch (AddressException e) {
-            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
-        } catch (MessagingException e) {
-            Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
-        }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+        startActivity(new Intent(getApplicationContext(),cartPage.class));
     }
-
 }

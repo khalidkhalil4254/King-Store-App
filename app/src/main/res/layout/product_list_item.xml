@@ -30,7 +30,6 @@
         <TextView
                 android:text="price"
                 android:textSize="16dp"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/productPrice"
@@ -73,7 +72,9 @@
                 android:layout_marginBottom="55dp"
                 android:clickable="false"
                 android:max="1"
-                android:numStars="5"
+                android:numStars="4"
+                android:rating="3"
+                android:stepSize="0.5"
                 android:layout_alignParentBottom="true"/>
         <TextView
                 android:text="Rating : "

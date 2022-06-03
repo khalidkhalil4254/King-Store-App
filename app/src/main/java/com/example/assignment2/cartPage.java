@@ -55,13 +55,8 @@ public class cartPage extends AppCompatActivity {
         checkout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                startActivity(new Intent(getApplicationContext(),checkoutPage.class));
-                Toast.makeText(getApplicationContext(),"checkout",Toast.LENGTH_SHORT).show();
                 try {
-                    controller con=new controller(getApplicationContext());
-                    String user=con.getActiveUser();
-                    Toast.makeText(getApplicationContext(),"this is : "+String.valueOf(con.getFinalTotal(user)),Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getApplicationContext(),checkoutPage.class));
                 }catch (Exception er){
                     Toast.makeText(getApplicationContext(),er.toString(),Toast.LENGTH_LONG).show();
                 }
